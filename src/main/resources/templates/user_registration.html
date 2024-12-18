@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register New User</title>
+</head>
+<body>
+    <h1>Register New User</h1>
+    <form action="/users/save" method="post" th:object="${user}">
+        <label>Full Name:</label>
+        <input type="text" th:field="*{fullname}" placeholder="Enter full name" required /><br/><br/>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" placeholder="Enter email" required /><br/><br/>
+
+        <label>Phone:</label>
+        <input type="text" th:field="*{phone}" placeholder="Enter phone number" required /><br/><br/>
+
+        <label>Date of Birth:</label>
+        <input type="date" th:field="*{dob}" required /><br/><br/>
+
+        <label>Gender:</label>
+        <select th:field="*{gender}" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br/><br/>
+
+        <label>Address Line 1:</label>
+        <input type="text" th:field="*{address1}" placeholder="Enter address line 1" required /><br/><br/>
+
+        <label>Address Line 2:</label>
+        <input type="text" th:field="*{address2}" placeholder="Enter address line 2" /><br/><br/>
+
+        <label>Postal Code:</label>
+        <input type="text" th:field="*{postalcode}" placeholder="Enter postal code" required /><br/><br/>
+
+        <label>State:</label>
+        <input type="text" th:field="*{state}" placeholder="Enter state" required /><br/><br/>
+
+        <label>Country:</label>
+        <input type="text" th:field="*{country}" placeholder="Enter country" required /><br/><br/>
+
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" placeholder="Enter password" required /><br/><br/>
+
+        <label>Confirm Password:</label>
+        <input type="password" th:field="*{confirmpassword}" placeholder="Confirm password" required /><br/><br/>
+
+        <label>Security Question:</label>
+        <input type="text" th:field="*{securityquestion}" placeholder="Enter security question" required /><br/><br/>
+
+        <label>Security Answer:</label>
+        <input type="text" th:field="*{securityanswer}" placeholder="Enter security answer" required /><br/><br/>
+
+        <label>Accept Terms:</label>
+        <input type="checkbox" th:field="*{terms}" required /> I agree to the terms and conditions<br/><br/>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
